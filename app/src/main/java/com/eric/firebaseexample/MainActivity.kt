@@ -17,7 +17,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        this.requestWindowFeature(Window.FEATURE_NO_TITLE)
         binding = androidx.databinding.DataBindingUtil.setContentView(this, R.layout.activity_main)
 
 

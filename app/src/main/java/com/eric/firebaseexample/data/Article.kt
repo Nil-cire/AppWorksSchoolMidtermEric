@@ -12,7 +12,7 @@ data class ListArticle(
 
 @Parcelize
 data class Article(
-    val arthor : Author? = null,
+    val author : Author? = null,
     val title: String? = null,
     val content: String? = null,
     val createdTime: Long? = null,

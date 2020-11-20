@@ -1,9 +1,9 @@
 package com.eric.firebaseexample.publisher
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import com.google.firebase.firestore.FirebaseFirestore
 import java.util.*
 
@@ -23,16 +23,23 @@ class PublisherViewModel(database: FirebaseFirestore, app: Application): Android
             ),
             "title" to title,
             "content" to content,
-            "createdTime" to Calendar.getInstance().timeInMillis,
             "id" to "eric",
+            "createdTime" to Calendar.getInstance().timeInMillis,
             "category" to category
         )
 
-        if (email != null && id != null && name != null) {
+        if (email.isNullOrBlank()) {
+            Log.i("Form error", "require email")
+        } else if (id.isNullOrBlank()) {
+            Log.i("Form error", "require id")
+        } else if (name.isNullOrBlank()) {
+            Log.i("Form error", "require name")
+        } else {
             db.collection("articles").add(article)
             donePost()
             resetdonePost()
         }
+
     }
 
     fun donePost() {

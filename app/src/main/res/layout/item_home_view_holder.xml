@@ -8,6 +8,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="#FFAAD5"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <TextView
@@ -18,6 +19,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:text="@{article.title}"
+        android:background="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -26,7 +28,8 @@
         android:layout_width="200dp"
         android:layout_height="24dp"
         android:id="@+id/author_name"
-        android:text="@{article.arthor.name}"
+        android:text="@{article.author.name}"
+        android:background="@color/white"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintStart_toStartOf="@+id/article_title"
@@ -38,6 +41,7 @@
         android:id="@+id/created_time"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
+        android:background="@color/white"
         android:text="@{article.createdTime.toString()}"
         app:layout_constraintStart_toStartOf="@+id/author_name"
         app:layout_constraintTop_toBottomOf="@+id/author_name" />
@@ -48,6 +52,7 @@
         android:id="@+id/category"
         android:text="@{article.category}"
         android:layout_marginEnd="16dp"
+        android:background="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/author_name" />
 
@@ -59,6 +64,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
+        android:background="@color/white"
         android:layout_marginBottom="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

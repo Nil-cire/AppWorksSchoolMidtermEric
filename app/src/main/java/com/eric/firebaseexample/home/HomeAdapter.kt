@@ -29,8 +29,6 @@ class HomeAdapter(private val onClickListener: OnClickListener ) :
         }
     }
 
-
-
     companion object DiffCallback : DiffUtil.ItemCallback<Article>() {
         override fun areItemsTheSame(oldItem: Article, newItem: Article): Boolean {
             return oldItem === newItem
@@ -39,9 +37,6 @@ class HomeAdapter(private val onClickListener: OnClickListener ) :
             return oldItem.id == newItem.id
         }
 
-        private const val ITEM_VIEW_TYPE_TITLE            = 0x00
-        private const val ITEM_VIEW_TYPE_PRODUCT_FULL     = 0x01
-        private const val ITEM_VIEW_TYPE_PRODUCT_COLLAGE  = 0x02
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -62,11 +57,4 @@ class HomeAdapter(private val onClickListener: OnClickListener ) :
         }
     }
 
-//    override fun getItemViewType(position: Int): Int {
-//        return when (getItem(position)) {
-//            is HomeItem.Title -> ITEM_VIEW_TYPE_TITLE
-//            is HomeItem.FullProduct -> ITEM_VIEW_TYPE_PRODUCT_FULL
-//            is HomeItem.CollageProduct -> ITEM_VIEW_TYPE_PRODUCT_COLLAGE
-//        }
-//    }
 }

@@ -45,24 +45,7 @@ class HomeFragment : Fragment(){
         binding.homeRecyclerView.adapter = adapter
         adapter.submitList(viewModel.articles.value)
 
-        //testing
 
-        fun addpost() {
-            val article = hashMapOf<String, Any>(
-                "author" to hashMapOf(
-                    "email" to ".com",
-                    "id" to "eric1141",
-                    "name" to "eric"
-                ),
-                "title" to "考場安靜",
-                "content" to "窒息了",
-                "createdTime" to Calendar.getInstance().timeInMillis,
-                "id" to "ox",
-                "category" to "SchoolLife"
-            )
-
-            db.collection("articles").add(article)
-        }
 
         val getart = db.collection("articles").orderBy("createdTime").get().addOnSuccessListener {
             it.let {
@@ -86,6 +69,26 @@ class HomeFragment : Fragment(){
             }
         })
         //testing
+
+        //testing
+
+        fun addpost() {
+            val article = hashMapOf<String, Any>(
+                "author" to hashMapOf(
+                    "email" to ".com",
+                    "id" to "eric1141",
+                    "name" to "eric"
+                ),
+                "title" to "考場安靜",
+                "content" to "窒息了",
+                "createdTime" to Calendar.getInstance().timeInMillis,
+                "id" to "ox",
+                "category" to "SchoolLife"
+            )
+
+            db.collection("articles").add(article)
+        }
+
 
         binding.homeTitle.setOnClickListener {
             viewModel.addpost()

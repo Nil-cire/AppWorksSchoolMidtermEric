@@ -33,7 +33,7 @@ class HomeViewModel(database: FirebaseFirestore, app: Application): AndroidViewM
                 .orderBy("createdTime", Query.Direction.DESCENDING)
                 .get()
                 .addOnSuccessListener {
-                    it.let {
+                    it?.let {
                         _articles.value = it.toObjects(Article::class.java)
                         getData.value = 1
                     }
@@ -49,11 +49,12 @@ class HomeViewModel(database: FirebaseFirestore, app: Application): AndroidViewM
                 "email" to ".com",
                 "id" to "eric1141",
                 "name" to "eric"
+
             ),
             "title" to "考場安靜",
             "content" to "窒息了",
-            "createdTime" to Calendar.getInstance().timeInMillis,
             "id" to "ox",
+            "createdTime" to Calendar.getInstance().timeInMillis,
             "category" to "SchoolLife"
         )
 
