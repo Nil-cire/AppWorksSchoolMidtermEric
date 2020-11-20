@@ -4,6 +4,7 @@ import android.content.ContentValues
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Window
 import android.widget.TextView
 import com.eric.firebaseexample.databinding.ActivityMainBinding
 import com.google.android.gms.common.util.DataUtils
@@ -16,10 +17,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE)
         binding = androidx.databinding.DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        setContentView(R.layout.activity_main)
 
         val sample = hashMapOf<String, Any?>(
             "Family" to "Some",
@@ -35,13 +35,13 @@ class MainActivity : AppCompatActivity() {
 //        val btn = findViewById<TextView>(R.id.add)
 
 //        binding.add.setOnClickListener {
-            User.add(sample)
-                .addOnSuccessListener {it ->
-                    it.update("id", it.id)
-                    Log.i("add success", "ya")
-                } .addOnFailureListener {e ->
-                    Log.w("Error adding document", "Error adding document", e)
-                }
+//            User.add(sample)
+//                .addOnSuccessListener {it ->
+//                    it.update("id", it.id)
+//                    Log.i("add success", "ya")
+//                } .addOnFailureListener {e ->
+//                    Log.w("Error adding document", "Error adding document", e)
+//                }
 //        }
 
 

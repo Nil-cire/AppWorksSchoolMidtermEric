@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">fireBaseExample</string>
+    <string name="title">Publisher</string>
+    <string name="publish">Publish</string>
 </resources>
